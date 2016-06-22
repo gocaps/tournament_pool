@@ -1,0 +1,4 @@
+name = Tournament Pool
+description = Stat Manager, Point Calculator, Standings displays for a tournament pool
+core = "7.x"
+version = "7.x-1.0"

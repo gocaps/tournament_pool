@@ -1,0 +1,42 @@
+<?php
+
+function tournament_pool_menu() {
+
+	$items['admin/pool/out'] = array(
+		'title' => 'Pool Out',
+		'description' => 'output to screen',
+  	'page callback' => 'tournament_pool_out',
+  	'access arguments' => array('Access content'),
+	);
+	
+	return $items;
+}
+
+
+function tournament_pool_generate($bundle) {
+
+  $fields = field_info_instances('node', $bundle);	
+
+	foreach($fields as $field_name => $field_def) {
+		$field = field_info_field($field_name);
+		$allowed_values = list_allowed_values($field);	
+	}
+	
+	
+	
+}
+
+function tournament_pool_out() {
+	echo '<xmp>';
+
+	$out = field_info_instances('node', 'pool_picker');	
+	foreach($out as $field_name => $array) {
+		$field = field_info_field($field_name);
+		$allowed_values = list_allowed_values($field);	
+		print_r($allowed_values);
+	}
+
+	echo '</xmp>';
+
+	return;
+}
